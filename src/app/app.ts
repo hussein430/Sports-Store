@@ -1,22 +1,9 @@
-import { Component, inject, Renderer2 } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { Component } from '@angular/core';
+import { HeaderComponent } from './header/header.component';
 @Component({
   selector: 'app-root',
-  imports: [MatButtonModule, MatIconModule],
+  imports: [HeaderComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
-  renderer = inject(Renderer2);
-  isDarkMode: boolean = false;
-
-  toggleDarkMode() {
-    this.isDarkMode = !this.isDarkMode;
-    if (this.isDarkMode) {
-      this.renderer.addClass(document.body, 'dark-theme');
-    } else {
-      this.renderer.removeClass(document.body, 'dark-theme');
-    }
-  }
-}
+export class App {}
