@@ -38,7 +38,9 @@
           {{ product.description }}
         </p>
         <div class="product-actions">
-          <button mat-raised-button color="accent">Add To Cart</button>
+          <button mat-raised-button color="accent" (click)="addProductToCart(product)">
+            Add To Cart
+          </button>
         </div>
       </div>
     }

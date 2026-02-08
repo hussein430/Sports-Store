@@ -1,0 +1,46 @@
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cart-card {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.qty-input {
+  width: 80px;
+  margin-top: 10px;
+
+  input {
+    text-align: center;
+  }
+}
+
+.empty-cart-message {
+  text-align: center;
+  padding: 40px;
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.cart-total {
+  text-align: right;
+  padding: 20px;
+  font-size: 1.2rem;
+
+  .total-amount {
+    font-weight: bold;
+    color: var(--mat-sys-primary);
+    margin-left: 10px;
+  }
+}
+
+table {
+  width: 100%;
+  margin-bottom: 20px;
+}

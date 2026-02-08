@@ -7,6 +7,8 @@ import { CurrencyPipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { CounterDirective } from './counter.directive';
+import { Cart } from '../model/cart.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -18,16 +20,17 @@ import { CounterDirective } from './counter.directive';
     MatSelectModule,
     CounterDirective,
   ],
-  standalone: true,
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss',
 })
 export class ShopComponent {
   private repository = inject(ProductRepository);
+  private cart = inject(Cart);
+  private router = inject(Router);
   products: Signal<Product[]>;
   categories: Signal<string[]>;
   selectedCategory = signal<string>('All');
-  productsPerPage = signal(4);
+  productsPerPage = signal(3);
   selectedPage = signal(1);
   pagedProducts: Signal<Product[]>;
   // pageNumbers: Signal<number[]>;
@@ -72,5 +75,10 @@ export class ShopComponent {
   changePageSize(newSize: number) {
     this.productsPerPage.set(Number(newSize));
     this.changePage(1);
+  }
+
+  addProductToCart(product: Product) {
+    this.cart.addLine(product);
+    // this.router.navigateByUrl('/cart');
   }
 }

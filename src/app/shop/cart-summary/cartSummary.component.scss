@@ -1,0 +1,10 @@
+.cart-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .cart-price {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
