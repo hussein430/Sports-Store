@@ -22,8 +22,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatInputModule,
     MatFormFieldModule,
   ],
-  templateUrl: './cartDetail.component.html',
-  styleUrl: './cartDetail.component.scss',
+  templateUrl: 'cartDetail.component.html',
+  styleUrl: 'cartDetail.component.scss',
 })
 export class CartDetailComponent {
   public cart = inject(Cart);

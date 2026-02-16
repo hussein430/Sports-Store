@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { CounterDirective } from './counter.directive';
 import { Cart } from '../model/cart.model';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -19,9 +19,10 @@ import { Router } from '@angular/router';
     MatButtonModule,
     MatSelectModule,
     CounterDirective,
+    RouterModule,
   ],
-  templateUrl: './shop.component.html',
-  styleUrl: './shop.component.scss',
+  templateUrl: 'shop.component.html',
+  styleUrl: 'shop.component.scss',
 })
 export class ShopComponent {
   private repository = inject(ProductRepository);

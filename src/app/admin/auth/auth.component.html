@@ -1,0 +1,51 @@
+<div class="auth-container">
+  <mat-card class="auth-card">
+    <mat-card-header>
+      <mat-card-title>SportsStore Admin</mat-card-title>
+      <mat-card-subtitle>Please log in to continue</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      @if (errorMessage) {
+        <div class="error-banner">
+          <mat-icon>error_outline</mat-icon>
+          <span>{{ errorMessage }}</span>
+        </div>
+      }
+
+      <form #form="ngForm" (ngSubmit)="authenticate(form)" class="auth-form">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput name="username" [(ngModel)]="username" required #user="ngModel" />
+          <mat-icon matPrefix>person</mat-icon>
+          @if (user.invalid && user.touched) {
+            <mat-error>Username is required</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            name="password"
+            [(ngModel)]="password"
+            required
+            #pass="ngModel"
+          />
+          <mat-icon matPrefix>lock</mat-icon>
+          @if (pass.invalid && pass.touched) {
+            <mat-error>Password is required</mat-error>
+          }
+        </mat-form-field>
+
+        <div class="actions">
+          <button mat-button type="button" routerLink="/">Go Back</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+            Log In
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

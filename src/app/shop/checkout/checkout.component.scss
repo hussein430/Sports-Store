@@ -1,0 +1,50 @@
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.success-card {
+  margin: 1rem;
+  text-align: center;
+
+  .header {
+    display: block;
+  }
+
+  .actions {
+    display: block;
+  }
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+
+  mat-form-field {
+    flex: 1;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.big-icon {
+  font-size: 4rem;
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem 0;
+}

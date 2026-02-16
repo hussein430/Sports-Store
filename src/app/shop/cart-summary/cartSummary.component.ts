@@ -8,8 +8,8 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'cart-summary',
   imports: [CurrencyPipe, MatIconModule, MatButtonModule, MatBadgeModule, RouterModule],
-  templateUrl: './cartSummary.component.html',
-  styleUrl: './cartSummary.component.scss',
+  templateUrl: 'cartSummary.component.html',
+  styleUrl: 'cartSummary.component.scss',
 })
 export class CartSummaryComponent {
   constructor(public cart: Cart) {}
